@@ -1,7 +1,12 @@
 // @ts-check
 
-export const Description = () => {
-  return <></>
-}
+import { DogImage } from './DogImage'
 
-export default Description
+export const Description = ({ dogUrl, onClickButton }) => {
+  return (
+    <div>
+      <button onClick={onClickButton}>表示</button>
+      <DogImage imageUrl={dogUrl} />
+    </div>
+  )
+}

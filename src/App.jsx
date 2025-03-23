@@ -1,14 +1,29 @@
-// DO NOT DELETE
+// @ts-check
 
 import './App.css'
+import { useState } from 'react'
+import { Header } from './Header'
+import { Description } from './Description'
+import { DogListContainer } from './DogListContainer'
 
-/**
- * @type {() => JSX.Element}
- */
 export const App = () => {
+  const [dogUrl, setDogUrl] = useState(
+    'https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg',
+  )
+
+  const onClickButton = () => {
+    fetch('https://dog.ceo/api/breeds/image/random')
+      .then(res => res.json())
+      .then(data => {
+        setDogUrl(data.message)
+      })
+  }
+
   return (
-    <div>
-      <h2>Hello, world!</h2>
-    </div>
+    <>
+      <Header />
+      <DogListContainer />
+      <Description dogUrl={dogUrl} onClickButton={onClickButton} />
+    </>
   )
 }

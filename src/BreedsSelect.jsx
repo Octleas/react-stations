@@ -7,7 +7,6 @@ export const BreedsSelect = ({ breed = [], selectedBreed }) => {
 
   return (
     <select onChange={handleSelectChange}>
-      <option value="">犬種を選択してください</option>
       {breed.map(breedName => (
         <option key={breedName} value={breedName}>
           {breedName}

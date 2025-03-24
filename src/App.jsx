@@ -1,5 +1,3 @@
-// @ts-check
-
 import './App.css'
 import { useState } from 'react'
 import { Header } from './Header'
@@ -22,8 +20,8 @@ export const App = () => {
   return (
     <>
       <Header />
-      <DogListContainer />
       <Description dogUrl={dogUrl} onClickButton={onClickButton} />
+      <DogListContainer />
     </>
   )
 }
